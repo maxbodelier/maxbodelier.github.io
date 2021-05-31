@@ -2,10 +2,206 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Max Bodelier</title>
+
+    <style>
+        @font-face {
+            font-family: Raleway;
+            src: url('./styles/fonts/Raleway-VariableFont_wght.ttf');
+        }
+
+        .body {
+            background-color: #101010;
+            color: #FFFFFF;
+            font-family: "Raleway", sans-serif;
+            margin: 0;
+        }
+
+        .width-container {
+            max-width: 1280px;
+            margin: auto;
+            padding-top: 48px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+        .navigation-items {
+            display: flex;
+            border: 2px dashed #FFFFFF;
+            margin: 8px;
+        }
+
+        .navigation-item {
+            font-size: 24px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 16px 16px;
+        }
+
+        .navigation-item:hover {
+            background-color: #2e5090;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            text-align: right;
+            width: 50%;
+        }
+
+        .header-image {
+            width: 45%;
+
+        }
+
+        .header-image .image {
+            display: block;
+            opacity: 0.9;
+            border-top-right-radius: 50%;
+            filter: grayscale(80%);
+        }
+
+        .content {
+            padding-top: 56px;
+            padding-right: 56px;
+        }
+
+        .heading-1 {
+            font-size: 62px;
+            line-height: 72px;
+        }
+
+        .heading-1 b {
+            color: #2e5090;
+        }
+
+        .heading-2 {
+            font-size: 62px;
+        }
+
+        .divider {
+            border: 4px solid #2e5090;
+            border-radius: 5px;
+            width: 150px;
+        }
+
+        .paragraph {
+            padding: 0 10%;
+        }
+
+        .paragraph .heading-1 {
+            text-align: center;
+            margin: 32px 0 0 0;
+
+        }
+
+        .paragraph .description {
+            font-size: 24px;
+            color: lightgrey;
+            text-align: center;
+        }
+
+        #skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #skills .skill {
+            background-color: grey;
+            font-size: 24px;
+            list-style-type: none;
+            padding: 8px 16px;
+            margin: 8px;
+            border-radius: 16px;
+        }
+    </style>
+
 </head>
-<body>
-<h1>hello from max</h1>
+<body class="body">
+<section>
+    <nav class="navigation">
+        <div class="navigation-items">
+            <a href="assets/documents/SAMPLE.pdf" download="sample-document" class="navigation-item">
+                <img src="assets/svg/cv.svg" height="72" alt="CV Icon" class="icon">
+            </a>
+            <a href="https://www.linkedin.com/in/max-bodelier/" target="_blank" class="navigation-item">
+                <img src="assets/svg/linkedin.svg" height="72" alt="LinkedIn Logo" class="icon">
+            </a>
+        </div>
+    </nav>
+</section>
+
+<section class="width-container">
+    <header class="header">
+        <div class="header-image">
+            <img src="assets/images/max-bodelier.jpg" width="100%" alt="Max Bodelier" class="image">
+        </div>
+        <div class="header-content">
+            <div class="content">
+                <h1 class="heading-1"><b>Max Bodelier</b></h1>
+                <h2 class="heading-2">Software Engineer with Passion and Perseverance</h2>
+            </div>
+        </div>
+    </header>
+</section>
+
+<section class="width-container">
+    <div class="paragraph">
+        <h1 class="heading-1">Who am I?</h1>
+        <hr class="divider">
+        <p class="description">
+            I have over two years of experience in software development in different industries. I am
+            an excellent and enthusiastic team player and show perseverance regarding my tasks. Strong social and
+            communication skills are at the core of my competences. I always aims to achieve the best possible results
+            for the customer in the most efficient way.
+        </p>
+    </div>
+</section>
+
+<section class="width-container">
+    <div class="paragraph">
+        <h1 class="heading-1">Skills</h1>
+        <hr class="divider">
+        <ul id="skills"></ul>
+
+    </div>
+</section>
+
 
 </body>
+
+<script>
+    const skills = [
+        'Working Agile (Scrum)',
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'VueJS',
+        'Amazon Web Services',
+        'ContentFul CMS',
+        'Microsoft Azure',
+        'Entry level C#',
+        'Entry level .NET Core'
+    ];
+
+    const element = document.getElementById('skills');
+
+    skills.forEach((skill) => {
+        const listItem = document.createElement('LI');
+        listItem.classList.add('skill')
+        listItem.innerHTML = skill;
+        element.appendChild(listItem)
+    })
+
+
+</script>
+
 </html>
