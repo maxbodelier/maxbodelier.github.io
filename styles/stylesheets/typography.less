@@ -1,0 +1,73 @@
+@import "colors";
+
+@font-size-desktop-small: 24px;
+@font-size-desktop-medium: 56px;
+@font-size-desktop-Large: 72px;
+
+@font-size-mobile-small: 16px;
+@font-size-mobile-medium: 20px;
+@font-size-mobile-large: 24px;
+
+
+@font-face {
+  font-family: Raleway;
+  src: url('../fonts/Raleway-VariableFont_wght.ttf');
+}
+
+body {
+  background-color: #101010;
+  font-family: "Raleway", sans-serif;
+}
+
+.heading-1 {
+  font-size: @font-size-desktop-Large;
+  color: @font-color-normal;
+
+  b {
+    color: @font-color-bold;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: @font-size-mobile-large;
+  }
+}
+
+.heading-2 {
+  font-size: @font-size-desktop-medium;
+  color: @font-color-normal;
+
+  @media only screen and (max-width: 768px) {
+    font-size: @font-size-mobile-large;
+  }
+}
+
+.heading-2.dark {
+  color: @font-color-dark;
+}
+
+.heading-3 {
+  font-size: calc(@font-size-desktop-medium/2);
+  color: @font-color-normal;
+}
+
+.description {
+  font-size: @font-size-desktop-small;
+  color: @color-lightgrey;
+}
+
+.description.dark {
+  color: @font-color-grey;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.bold {
+  color: @font-color-normal;
+  font-weight: bold;
+}
