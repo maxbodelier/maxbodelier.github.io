@@ -46,8 +46,12 @@ body {
 }
 
 .heading-3 {
-  font-size: calc(@font-size-desktop-medium/2);
+  font-size: calc(@font-size-desktop-medium * (2/3));
   color: @font-color-normal;
+}
+
+.heading-3.dark {
+  color: @font-color-dark;
 }
 
 .description {

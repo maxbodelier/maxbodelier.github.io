@@ -211,15 +211,28 @@
     const projectsList = [
         {
             projectName: 'Scala, Sittard',
-            projectDescription: 'Scala focusses on building strategic partnerships with the world’s leading brands to apply a wide array of technology — including digital signs, mobile sensors, audience intelligence, virtual reality and computer vision technology — in the physical space. They\'re transforming how consumers experience retail stores, quick-service restaurants, airports, banks and corporate environments with a “marketing first” point of view, matching the vision with the strategy, experience and delivery capability to make the client\'s project a success.'
+            projectDescription: 'Scala focusses on building strategic partnerships with the world’s leading brands to apply a wide array of technology — including digital signs, mobile sensors, audience intelligence, virtual reality and computer vision technology — in the physical space. They\'re transforming how consumers experience retail stores, quick-service restaurants, airports, banks and corporate environments with a “marketing first” point of view, matching the vision with the strategy, experience and delivery capability to make the client\'s project a success.',
+            marketDetails: 'Marketing, Digital Signage',
+            activeTime: '2020 - present',
+            functionTitle: 'Software Engineer',
+            functionDescription: 'Design and implementation of various front-ends (websites) for each of the Stratacache company brands. Moving from separate WordPress CMS instances towards a unifying bespoke platform, with a headless CMS (Contentful) to back it up. By unifying content, Scala and Stratacache have single place to maintain and update content from a single hub and structuring it so it can be used in any digital channel, it is currently setup to handle and distribute content to eighteen websites from a centralized system, with over half a million of page visits per month.',
         },
         {
             projectName: 'Aevitae, Heerlen',
-            projectDescription: 'Aevitae is a leading authorized agent in the Netherlands specialized in servicing healthcare, employee benefit and personal benefit insurance on behalf of insurers. Aevitae has a customer base of more than 250.000.'
+            projectDescription: 'Aevitae is a leading authorized agent in the Netherlands specialized in servicing healthcare, employee benefit and personal benefit insurance on behalf of insurers. Aevitae has a customer base of more than 250.000.',
+            marketDetails: 'Insurance',
+            activeTime: '2019 - 2020',
+            functionTitle: 'Software Engineer',
+            functionDescription: 'Implementation of .NET Core backend system which implements business rules for checking incoming health declarations on their validity and avoid wrongful payment to the insured. The main flow the application included; queueing incoming messages (Azure service bus), process these messages by checking their validity against the predefined business rules (.NET Core, C#), and lastly output the results to a dashboard for the auditing department.',
         },
         {
             projectName: 'MeanderGroep Zuid-Limburg, Landgraaf',
-            projectDescription: 'MeanderGroep Zuid-Limburg is a public Healthcare provider for all age categories. The assist in the areas of prevention, wellbeing, living, care, and ease of life. The want to give their patients control over their own life and live as independent as possible. They achieve this by implementing innovative initiatives and use these to deliver the highest quality of care to their patients.'
+            projectDescription: 'MeanderGroep Zuid-Limburg is a public Healthcare provider for all age categories. The assist in the areas of prevention, wellbeing, living, care, and ease of life. The want to give their patients control over their own life and live as independent as possible. They achieve this by implementing innovative initiatives and use these to deliver the highest quality of care to their patients.',
+            marketDetails: 'Healthcare',
+            activeTime: '2017 - 2019',
+            functionTitle: 'Data Science/Management Consultant',
+            functionDescription: 'Enabling/implementing data science solutions for MeanderGroep, where the delivery of healthcare to patients and Backoffice processes could benefit from. Activities included:\n' +
+                'Researching the needs/opportunities within the organization where innovative data science solutions could be realized, Creating an overview (organization wide) to show all possibilities for data science solutions for management, Define business cases for problem owners for implementing the data science solutions, Manage the realization/implementation of data science business cases\n',
         }
     ]
 
@@ -228,6 +241,7 @@
     projectsList.forEach((project) => {
         const paragraph = document.createElement('DIV');
         paragraph.classList.add('paragraph');
+
         const title = document.createElement('H2');
         title.innerHTML = project.projectName;
         title.classList.add('heading-2','dark', 'no-margin');
@@ -236,10 +250,42 @@
         description.innerHTML = project.projectDescription;
         description.classList.add('description', 'dark');
         paragraph.appendChild(description);
+
+        const companyParagraph = document.createElement('DIV');
+        companyParagraph.classList.add('flex');
         const companyImage = document.createElement('IMG');
+        companyImage.classList.add('icon');
         companyImage.src = 'assets/svg/business-and-trade.svg'
         companyImage.width = 56;
-        paragraph.appendChild(companyImage)
+        companyParagraph.appendChild(companyImage)
+        const marketText = document.createElement('P');
+        marketText.innerHTML = project.marketDetails;
+        marketText.classList.add('heading-3','dark')
+        companyParagraph.appendChild(marketText)
+        paragraph.appendChild(companyParagraph)
+
+        const activeTime = document.createElement('P')
+        activeTime.classList.add('description','dark','no-margin')
+        activeTime.innerHTML = project.activeTime;
+        paragraph.appendChild(activeTime)
+
+        const functionParagraph = document.createElement('DIV');
+        functionParagraph.classList.add('flex');
+        const functionImage = document.createElement('IMG');
+        functionImage.classList.add('icon');
+        functionImage.src = 'assets/svg/darts.svg'
+        functionImage.width = 56;
+        functionParagraph.appendChild(functionImage)
+        const functionText = document.createElement('P');
+        functionText.innerHTML = project.functionTitle;
+        functionText.classList.add('heading-3','dark')
+        functionParagraph.appendChild(functionText)
+        paragraph.appendChild(functionParagraph)
+
+        const functionDescriptionParagraph = document.createElement('P')
+        functionDescriptionParagraph.classList.add('description','dark','no-margin')
+        functionDescriptionParagraph.innerHTML = project.functionDescription;
+        paragraph.appendChild(functionDescriptionParagraph)
 
         projectsParagraph.appendChild(paragraph);
     })
