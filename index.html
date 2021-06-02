@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>Max Bodelier</title>
-
+    <link rel="stylesheet/less" type="text/css" href="styles/stylesheets/shared.less"/>
+    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
     <style>
         body {
             margin: 0;
@@ -115,10 +116,6 @@
             }
         }
     </style>
-
-    <link rel="stylesheet/less" type="text/css" href="styles/stylesheets/shared.less"/>
-    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
-
 </head>
 <body>
 <section>
@@ -133,7 +130,6 @@
         </div>
     </nav>
 </section>
-
 <section class="width-container">
     <header class="header">
         <div class="header-image">
@@ -147,7 +143,6 @@
         </div>
     </header>
 </section>
-
 <section class="width-container">
     <div class="paragraph">
         <h2 class="heading-2 align-center no-margin">Who am I?</h2>
@@ -160,7 +155,6 @@
         </p>
     </div>
 </section>
-
 <section class="width-container">
     <div class="paragraph">
         <h2 class="heading-2 align-center no-margin">Skills</h2>
@@ -168,7 +162,6 @@
         <ul id="skills"></ul>
     </div>
 </section>
-
 <section class="width-container">
     <div class="paragraph highlights">
         <div class="highlight">
@@ -203,18 +196,17 @@
     </div>
 
 </section>
-
 <section class="white-background">
-    <div class="paragraph" style="padding-bottom: 0">
-        <h2 class="heading-2 align-center no-margin dark">Projects</h2>
-        <hr class="divider-1">
+    <div class="width-container">
+        <div class="paragraph" style="padding-bottom: 0">
+            <h2 class="heading-2 align-center no-margin dark">Projects</h2>
+            <hr class="divider-1">
+        </div>
+        <div id="projects"></div>
     </div>
-
-    <div id="projects" class="width-container"></div>
 </section>
 </body>
 
-<!--Skills-->
 <script>
     const skills = [
         'Working Agile (Scrum)',
@@ -224,7 +216,7 @@
         'VueJS',
         'Amazon Web Services',
         'ContentFul CMS',
-        'Microsoft Azure',
+        'Entry level Microsoft Azure',
         'Entry level C#',
         'Entry level .NET Core',
         'Google Tag Manager',
@@ -240,8 +232,6 @@
         skillsParagraph.appendChild(listItem)
     })
 </script>
-
-<!--Projects-->
 <script>
     const projects = [
         {
