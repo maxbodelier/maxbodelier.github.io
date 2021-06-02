@@ -23,6 +23,7 @@
         .navigation-item {
             font-size: 24px;
             padding: 16px 16px;
+            transition: background-color 0.2s;
         }
 
         .navigation-item:hover {
@@ -31,12 +32,24 @@
 
         .header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
         }
 
         .header-content {
             text-align: right;
             width: 50%;
+        }
+
+        .content {
+            padding-top: 56px;
+            padding-right: 56px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .content {
+                padding: 0;
+            }
         }
 
         .header-image {
@@ -48,15 +61,23 @@
             border-radius: 50%;
         }
 
-        .content {
-            padding-top: 56px;
-            padding-right: 56px;
+        @media only screen and (max-width: 768px){
+            .header-content {
+                margin: auto;
+                text-align: center;
+                width: 80%;
+            }
+            .header-image {
+                margin: auto;
+                width: 80%;
+            }
         }
 
         #skills {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 0;
         }
 
         #skills .skill {
@@ -64,6 +85,34 @@
             padding: 8px 16px;
             margin: 8px;
             border-radius: 16px;
+            color: #FFFFFF;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .highlights .highlight {
+            width: 40%
+        }
+
+        .highlight:last-child {
+            text-align: right;
+        }
+
+        .highlight:last-child .divider-1.no-margin-left {
+            margin-right: 0;
+            margin-left: auto;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .highlights .highlight {
+                margin: auto;
+                width: 80%;
+                padding: 24px 0;
+            }
         }
     </style>
 
@@ -121,54 +170,38 @@
 </section>
 
 <section class="width-container">
-    <div class="paragraph">
-        <table class="table">
-            <tr>
-                <th class="heading-2 align-left no-margin">
-                    Personal details
-                    <hr class="divider-1 align-left no-margin-left">
-                </th>
-                <th class="heading-2 align-left no-margin">
-                    Career highlights
-                    <hr class="divider-1 align-left no-margin-left">
-                </th>
-            </tr>
-            <tr>
-                <td class="description">
-                    <div class="flex">
-                        <img src="assets/svg/mortarboard.svg" alt="Education" width="56px" class="icon">
-                        <p class="description">Master in Innovation Sciences</p>
-                    </div>
-                    <div class="flex">
-                        <img src="assets/svg/cake.svg" alt="Birthday" width="56px" class="icon">
-                        <p class="description">29 December 1993</p>
-                    </div>
-                    <div class="flex">
-                        <img src="assets/svg/chat-oval-speech-bubbles-symbol.svg" alt="Languages" width="56px" class="icon">
-                        <p class="description">Dutch (mother tongue), English (fluent), German (basic)</p>
-                    </div>
+    <div class="paragraph highlights">
+        <div class="highlight">
+            <h2 class="heading-2 no-margin">Personal<br/>Highlights</h2>
+            <hr class="divider-1 no-margin-left">
+            <div class="flex">
+                <img src="assets/svg/mortarboard.svg" alt="Education" width="56px" class="icon">
+                <p class="description">Master in Innovation Sciences</p>
+            </div>
+            <div class="flex">
+                <img src="assets/svg/cake.svg" alt="Birthday" width="56px" class="icon">
+                <p class="description">29 December 1993</p>
+            </div>
+            <div class="flex">
+                <img src="assets/svg/chat-oval-speech-bubbles-symbol.svg" alt="Languages" width="56px" class="icon">
+                <p class="description">Dutch (mother tongue), English (fluent), German (basic)</p>
+            </div>
+        </div>
+        <div class="highlight">
+            <h2 class="heading-2 no-margin">Career<br/>highlights</h2>
+            <hr class="divider-1 no-margin-left">
+            <p class="description">
+                <b>Mediaan (2019-present)</b><br/>
+                Junior software engineer Software engineer within development team
+            </p>
+            <p class="description">
+                <b>Mediaan (2017-2019)</b><br/>
+                Junior management consultant Management consultant data science within public healthcare industry
+            </p>
+        </div>
 
-                </td>
-                <td class="description">
-                    <p class="description">
-                        <span class="bold">Mediaan (2019-present)</span>
-                        <br/>
-                        Junior software engineer
-                        <br/>
-                        Software engineer within development team
-                    </p>
-
-                    <p class="description">
-                        <span class="bold">Mediaan (2017-2019)</span>
-                        <br/>
-                        Junior management consultant
-                        <br/>
-                        Management consultant data science within public healthcare industry
-                    </p>
-                </td>
-            </tr>
-        </table>
     </div>
+
 </section>
 
 <section class="white-background">
@@ -181,8 +214,9 @@
 </section>
 </body>
 
+<!--Skills-->
 <script>
-    const skillsList = [
+    const skills = [
         'Working Agile (Scrum)',
         'HTML5',
         'CSS3',
@@ -199,7 +233,7 @@
 
     const skillsParagraph = document.getElementById('skills');
 
-    skillsList.forEach((skill) => {
+    skills.forEach((skill) => {
         const listItem = document.createElement('LI');
         listItem.classList.add('skill', 'default-background', 'description')
         listItem.innerHTML = skill;
@@ -207,8 +241,9 @@
     })
 </script>
 
+<!--Projects-->
 <script>
-    const projectsList = [
+    const projects = [
         {
             projectName: 'Scala, Sittard',
             projectDescription: 'Scala focusses on building strategic partnerships with the world’s leading brands to apply a wide array of technology — including digital signs, mobile sensors, audience intelligence, virtual reality and computer vision technology — in the physical space. They\'re transforming how consumers experience retail stores, quick-service restaurants, airports, banks and corporate environments with a “marketing first” point of view, matching the vision with the strategy, experience and delivery capability to make the client\'s project a success.',
@@ -238,7 +273,7 @@
 
     const projectsParagraph = document.getElementById('projects');
 
-    projectsList.forEach((project) => {
+    projects.forEach((project) => {
         const paragraph = document.createElement('DIV');
         paragraph.classList.add('paragraph');
 
@@ -265,7 +300,7 @@
         paragraph.appendChild(companyParagraph)
 
         const activeTime = document.createElement('P')
-        activeTime.classList.add('description','dark','no-margin')
+        activeTime.classList.add('description','dark','no-margin', 'mobile-margin')
         activeTime.innerHTML = project.activeTime;
         paragraph.appendChild(activeTime)
 
@@ -283,7 +318,7 @@
         paragraph.appendChild(functionParagraph)
 
         const functionDescriptionParagraph = document.createElement('P')
-        functionDescriptionParagraph.classList.add('description','dark','no-margin')
+        functionDescriptionParagraph.classList.add('description','dark','no-margin', 'mobile-margin')
         functionDescriptionParagraph.innerHTML = project.functionDescription;
         paragraph.appendChild(functionDescriptionParagraph)
 

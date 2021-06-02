@@ -7,6 +7,7 @@
 @font-size-mobile-small: 16px;
 @font-size-mobile-medium: 20px;
 @font-size-mobile-large: 24px;
+@font-size-mobile-x-large: 48px;
 
 
 @font-face {
@@ -28,7 +29,7 @@ body {
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: @font-size-mobile-large;
+    font-size: @font-size-mobile-x-large;
   }
 }
 
@@ -48,6 +49,10 @@ body {
 .heading-3 {
   font-size: calc(@font-size-desktop-medium * (2/3));
   color: @font-color-normal;
+
+  @media only screen and (max-width: 768px) {
+    font-size: @font-size-mobile-medium;
+  }
 }
 
 .heading-3.dark {
@@ -57,6 +62,15 @@ body {
 .description {
   font-size: @font-size-desktop-small;
   color: @color-lightgrey;
+
+  b {
+    color: @font-color-normal;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 768px){
+    font-size: @font-size-mobile-small;
+  }
 }
 
 .description.dark {
