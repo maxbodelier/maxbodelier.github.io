@@ -9,12 +9,6 @@
 @font-size-mobile-large: 24px;
 @font-size-mobile-x-large: 48px;
 
-
-@font-face {
-  font-family: Raleway;
-  src: url('../fonts/Raleway-VariableFont_wght.ttf');
-}
-
 @font-face {
   font-family: Inter;
   src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
@@ -66,6 +60,19 @@ body {
 }
 
 .heading-3.dark {
+  color: @font-color-dark;
+}
+
+.heading-4 {
+  font-size: calc(@font-size-desktop-medium * (1/2));
+  color: @font-color-normal;
+
+  @media only screen and (max-width: 768px) {
+    font-size: calc(@font-size-mobile-medium - 2px);
+  }
+}
+
+.heading-4.dark {
   color: @font-color-dark;
 }
 
