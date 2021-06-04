@@ -17,6 +17,11 @@
             padding-bottom: 56px;
         }
 
+        .footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
 
         .navigation-logo, .navigation-items {
             display: flex;
@@ -36,6 +41,12 @@
 
         .navigation-item:hover {
             background-color: #2e5090;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navigation .navigation-items {
+                display: none;
+            }
         }
 
         .header {
@@ -215,7 +226,7 @@
     </div>
 </section>
 <section>
-    <nav class="navigation">
+    <nav class="footer">
         <div class="navigation-items">
             <a href="assets/documents/SAMPLE.pdf" download="sample-document" class="navigation-item">
                 <img src="assets/svg/cv.svg" height="72" alt="CV Icon">
