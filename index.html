@@ -13,17 +13,24 @@
 
         .navigation {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            padding-bottom: 56px;
         }
 
-        .navigation-items {
+
+        .navigation-logo, .navigation-items {
             display: flex;
             margin: 8px;
         }
 
+        .navigation-logo .logo {
+            padding-left: 16px;
+
+        }
+
         .navigation-item {
             font-size: 24px;
-            padding: 16px 16px;
+            padding: 16px;
             transition: background-color 0.2s;
         }
 
@@ -120,6 +127,9 @@
 <body>
 <section>
     <nav class="navigation">
+        <div class="navigation-logo">
+            <img src="assets/svg/logo.svg" class="logo">
+        </div>
         <div class="navigation-items">
             <a href="assets/documents/SAMPLE.pdf" download="sample-document" class="navigation-item">
                 <img src="assets/svg/cv.svg" height="72" alt="CV Icon">
@@ -137,8 +147,7 @@
         </div>
         <div class="header-content">
             <div class="content">
-                <h1 class="heading-1"><b>Max Bodelier</b></h1>
-                <h2 class="heading-2">Software Engineer with Passion and Perseverance</h2>
+                <h1 class="heading-2">Software Engineer with Passion and Perseverance</h1>
             </div>
         </div>
     </header>
@@ -204,6 +213,18 @@
         </div>
         <div id="projects"></div>
     </div>
+</section>
+<section>
+    <nav class="navigation">
+        <div class="navigation-items">
+            <a href="assets/documents/SAMPLE.pdf" download="sample-document" class="navigation-item">
+                <img src="assets/svg/cv.svg" height="72" alt="CV Icon">
+            </a>
+            <a href="https://www.linkedin.com/in/max-bodelier/" target="_blank" class="navigation-item">
+                <img src="assets/svg/linkedin.svg" height="72" alt="LinkedIn Logo">
+            </a>
+        </div>
+    </nav>
 </section>
 </body>
 
