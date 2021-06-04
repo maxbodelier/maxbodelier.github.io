@@ -111,10 +111,11 @@
 
         #skills .skill {
             list-style-type: none;
-            padding: 8px 16px;
+            padding: 12px 24px;
             margin: 8px;
-            border-radius: 16px;
+            border-radius: 6px;
             color: #FFFFFF;
+            background-color: #2b2b2b;
         }
 
         .highlights {
@@ -199,7 +200,7 @@
         </div>
         <div class="header-content">
             <div class="content">
-                <h1 class="heading-2">Software Engineer with Passion and Perseverance</h1>
+                <h1 class="heading-2">Software Engineer<br/> with Passion and Perseverance</h1>
             </div>
         </div>
     </header>
@@ -265,6 +266,13 @@
             <hr class="divider-1">
         </div>
         <div id="projects"></div>
+    </div>
+    <div class="width-container">
+        <div class="paragraph" style="padding-bottom: 0">
+            <h2 class="heading-2 align-center no-margin dark">Training</h2>
+            <hr class="divider-1">
+        </div>
+        <div id="training"></div>
     </div>
 </section>
 <section>
@@ -420,6 +428,64 @@
         paragraph.appendChild(functionDescriptionParagraph)
 
         projectsParagraph.appendChild(paragraph);
+    })
+</script>
+
+<script>
+    const training = [
+        {
+            trainingName: 'Microsoft Certification Program',
+            year: '2018',
+            introductionParagraph: 'I have participated in several Microsoft certification programs as part of my personal development. These programs where provided by a one-on-one teacher on location in Goa, India, where I have travelled to. These programs where provided by Koenig Solutions. The courses in which I have participated are given below',
+            courseList: [
+                {
+                    courseName: '20480C - Programming in HTML5 with JavaScript and CSS3'
+                },
+                {
+                    courseName: '20487D - Developing Microsoft Azure and Web Services'
+                },
+                {
+                    courseName: '20486D - Developing ASP.NET Core MVC WebApplications'
+                }
+            ]
+
+        }
+    ]
+
+    const trainingParagraph = document.getElementById('training');
+
+    training.forEach((training) => {
+        const paragraph = document.createElement('DIV');
+        paragraph.classList.add('paragraph');
+
+        const title = document.createElement('H2');
+        title.innerHTML = `${training.trainingName}, ${training.year}`;
+        title.classList.add('heading-2', 'dark', 'no-margin');
+        paragraph.appendChild(title);
+
+        const introductionParagraph = document.createElement('P');
+        introductionParagraph.innerHTML = training.introductionParagraph;
+        introductionParagraph.classList.add('description', 'dark');
+        paragraph.appendChild(introductionParagraph);
+
+        training.courseList.forEach((course) => {
+
+            const courseParagraph = document.createElement('DIV');
+            courseParagraph.classList.add('flex');
+            const courseImage = document.createElement('IMG');
+            courseImage.classList.add('icon');
+            courseImage.src = 'assets/svg/online-course.svg'
+            courseImage.width = 56;
+            courseImage.height = 56;
+            courseParagraph.appendChild(courseImage)
+            const marketText = document.createElement('P');
+            marketText.innerHTML = course.courseName;
+            marketText.classList.add('heading-3', 'dark')
+            courseParagraph.appendChild(marketText)
+            paragraph.appendChild(courseParagraph)
+        })
+
+        trainingParagraph.appendChild(paragraph);
     })
 </script>
 
